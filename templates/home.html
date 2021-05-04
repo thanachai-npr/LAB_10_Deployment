@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Insurance Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="age"></label>
+    <input type="number" id="age" name="age" placeholder="age (between 29 and 77)" min="29" max="77" required size="35">
+
+    <label for="sex"></label>
+    <input type="number" id="sex" name="sex" placeholder="sex (between 0(F) or 1(M))" min="0" max="1" required size="35">
+
+    <label for="chest_pain_type"></label>
+    <input type="number" id="chest_pain_type" name="chest_pain_type" placeholder="chest_pain_type (between 0 and 3)" min="0" max="3" required>
+
+    <label for="resting_blood_pressure"></label>
+    <input type="number" id="resting_blood_pressure" name="resting_blood_pressure" placeholder="resting_blood_pressure (between 94 and 200)" min="94" max="200" required>
+
+    <label for="serum_cholestoral"></label>
+    <input type="number" id="serum_cholestoral" name="serum_cholestoral" placeholder="serum_cholestoral (between 126 and 564)" min="126" max="564" required>
+
+    <label for="fasting_blood_sugar"></label>
+    <input type="number" id="fasting_blood_sugar" name="fasting_blood_sugar" placeholder="fasting_blood_sugar (between 0 and 1)" min="0" max="1" required>
+
+    <label for="resting_electrocardiographic_results"></label>
+    <input type="number" id="resting_electrocardiographic_results" name="resting_electrocardiographic_results" placeholder="resting_electrocardiographic_results (between 0 and 2)" min="0" max="2" required>
+
+    <label for="maximum_heart_rate_achieved"></label>
+    <input type="number" id="maximum_heart_rate_achieved" name="maximum_heart_rate_achieved" placeholder="maximum_heart_rate_achieved (between 71 and 202)" min="71" max="202" required>
+
+    <label for="exercise_induced_angina"></label>
+    <input type="number" id="exercise_induced_angina" name="exercise_induced_angina" placeholder="exercise_induced_angina (between 0 and 1)" min="0" max="1" required>
+
+    <label for="oldpeak"></label>
+    <input type="number" id="oldpeak" name="oldpeak" placeholder="oldpeak (between 0.0 and 6.2)" min="0" max="6.2" step="0.1" required>
+
+    <label for="the_slope_of_the_peak_exercise_ST_segment"></label>
+    <input type="number" id="the_slope_of_the_peak_exercise_ST_segment" name="the_slope_of_the_peak_exercise_ST_segment" placeholder="the_slope_of_the_peak_exercise_ST_segment (between 0 and 2)" min="0" max="2" required>
+
+    <label for="number_of_major_vessels"></label>
+    <input type="number" id="number_of_major_vessels" name="number_of_major_vessels" placeholder="number_of_major_vessels (between 0 and 4)" min="0" max="4" required>
+
+    <label for="thal"></label>
+    <input type="number" id="thal" name="thal" placeholder="thal (between 0 and 3)" min="0" max="3" required>
+
+    <select name="req_model">
+    <option value="DecisionTree">DecisionTree</option>
+    <option value="KNearestNeighbour">KNearestNeighbour</option>
+    <option value="NaiveBayes'">NaiveBayes'</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Result is {{ target}}</h2></center>
+    <center><h2><font color="Black"> {{ sale_making}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
